@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NRSJvqZHV03xWxoBjL096X3euBnc3XVHmjjErBnEojoPdCe/5VwVdub5yL5HxRFWPbVDdiILcBCF4xiR2NyGhw==",
+  "dgSpecHash": "lS9RunXRN7RIoj75C+ex5RcauKk330Jvo6zlYpAsi+sI6SjPSODPNa2NqRTWu21n5W0yOk60OlR2Le1hNFzd3w==",
   "success": true,
-  "projectFilePath": "E:\\ProjectC#\\Online_Shop\\Online_Shop\\Online_Shop.csproj",
+  "projectFilePath": "E:\\ProjectC#\\Last\\Online_Shop\\Online_Shop.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ProjectC#\\Online_Shop\\Online_Shop\\Online_Shop.csproj": {}
+    "E:\\ProjectC#\\Last\\Online_Shop\\Online_Shop.csproj": {}
   },
   "projects": {
-    "E:\\ProjectC#\\Online_Shop\\Online_Shop\\Online_Shop.csproj": {
+    "E:\\ProjectC#\\Last\\Online_Shop\\Online_Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ProjectC#\\Online_Shop\\Online_Shop\\Online_Shop.csproj",
+        "projectUniqueName": "E:\\ProjectC#\\Last\\Online_Shop\\Online_Shop.csproj",
         "projectName": "Online_Shop",
-        "projectPath": "E:\\ProjectC#\\Online_Shop\\Online_Shop\\Online_Shop.csproj",
+        "projectPath": "E:\\ProjectC#\\Last\\Online_Shop\\Online_Shop.csproj",
         "packagesPath": "C:\\Users\\Santnu\\.nuget\\packages\\",
-        "outputPath": "E:\\ProjectC#\\Online_Shop\\Online_Shop\\obj\\",
+        "outputPath": "E:\\ProjectC#\\Last\\Online_Shop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
