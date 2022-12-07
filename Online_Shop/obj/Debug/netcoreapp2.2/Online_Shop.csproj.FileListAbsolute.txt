@@ -112,3 +112,6 @@ E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.pdb
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.genruntimeconfig.cache
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.csproj.CopyComplete
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\Home\Detail.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\Home\Cart.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.csproj.AssemblyReference.cache
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\Order\Checkout.cshtml.g.cs
