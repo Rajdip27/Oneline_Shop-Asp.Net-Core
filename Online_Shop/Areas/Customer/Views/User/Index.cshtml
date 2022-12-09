@@ -27,12 +27,12 @@
         </tr>
         @foreach (var item in Model)
         {
-<tr>
-    <td>@item.FirstName @item.LastName</td>
-    <td>@item.UserName</td>
-    @if (item.LockoutEnd > DateTime.Now && item.LockoutEnd != null)
-    {
-<td>Inactive</td>
+            <tr>
+                <td>@item.FirstName @item.LastName</td>
+                <td>@item.UserName</td>
+                @if (item.LockoutEnd > DateTime.Now && item.LockoutEnd != null)
+                {
+                    <td>Inactive</td>
                     <td>
                         <div class="btn-group">
                             <a asp-action="Active" class="btn btn-primary" asp-route-id="@item.Id">
@@ -43,17 +43,19 @@
                             </a>
                         </div>
 
-                    </td> }
-                    else
-                                    {
+                    </td>
+ }
+                else
+                {
                     <td>Active</td>
-                                        <td style="width: 150px">
-                                            <partial name="_PartialView" model="@item.Id" />
-                                        </td>
-                                        
-                    }
+                    <td style="width: 150px">
+                        <partial name="_PartialView" model="@item.Id" />
+                    </td>
 
-</tr>}
+                }
+
+            </tr>
+}
     </table>
 </div>
 

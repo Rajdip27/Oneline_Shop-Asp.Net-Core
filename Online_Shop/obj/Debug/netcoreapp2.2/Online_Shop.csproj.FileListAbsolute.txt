@@ -157,5 +157,12 @@ E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewStart.csh
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_PartialView.cshtml.g.cs
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\User\Edit.cshtml.g.cs
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\User\Details.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\User\Lockout.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\User\Active.cshtml.g.cs
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\User\Delete.cshtml.g.cs
-E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\User\Locout.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Index.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Create.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Edit.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Delete.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.csproj.AssemblyReference.cache
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Assign.cshtml.g.cs

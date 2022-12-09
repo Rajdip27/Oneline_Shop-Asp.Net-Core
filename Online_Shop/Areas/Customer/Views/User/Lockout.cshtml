@@ -1,10 +1,7 @@
 ﻿@model Online_Shop.Models.ApplicationUser
 @{
-    ViewData["Title"] = "Locout";
+    ViewData["Title"] = "Lockout";
 }
-
-<br />
-
 <h2 class="text-info">Locout user</h2>
 <form asp-action="Locout" method="post" id="user-form" enctype="multipart/form-data">
     <div class="p-4 rounded border">
@@ -54,23 +51,25 @@
 @section Scripts{
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    <script>$(document).ready(function () {
+<script>
+    $(document).ready(function () {
         $("#user-form").validate({
-    rules: {
-      UserName : {
-        required: true,
-             },
-      PasswordHash : {
-        required: true,
-             }
+            rules: {
+                UserName: {
+                    required: true,
+                },
+                PasswordHash: {
+                    required: true,
+                }
             },
             messages: {
                 UserName: "Enter your email",
-PasswordHash:"Enter your password"
+                PasswordHash: "Enter your password"
             }
 
-  });
+        });
     });</script>
 }
+
 
 
