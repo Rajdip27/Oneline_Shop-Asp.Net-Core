@@ -164,5 +164,6 @@ E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Ro
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Create.cshtml.g.cs
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Edit.cshtml.g.cs
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Delete.cshtml.g.cs
-E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.csproj.AssemblyReference.cache
 E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\Assign.cshtml.g.cs
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Online_Shop.csproj.AssemblyReference.cache
+E:\ProjectC#\Last\Online_Shop\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\AssignUserRole.cshtml.g.cs

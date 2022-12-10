@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Online_Shop.Data;
 using Online_Shop.Models;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 namespace Online_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class SpecialTagController : Controller
     {
         private ApplicationDbContext _db;

@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Online_Shop.Data;
+using Online_Shop.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Online_Shop.Areas.Identity.Pages.Account
 {
@@ -17,11 +20,13 @@ namespace Online_Shop.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        ApplicationDbContext _db;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, ApplicationDbContext db)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _db = db;
         }
 
         [BindProperty]
@@ -76,6 +81,18 @@ namespace Online_Shop.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
+                    var UserInfo = _db.ApplicationUsers.FirstOrDefault(c => c.UserName.ToLower() == Input.Email.ToLower());
+                    var RoleInfo = (from ur in _db.UserRoles join r in _db.Roles on ur.RoleId equals r.Id where ur.UserId == UserInfo.Id select new SessionUserVm() {
+                        UserName = Input.Email,
+                        RoleName = r.Name
+                    
+                    
+                    }).FirstOrDefault();
+                    if (RoleInfo != null)
+                    {
+                        HttpContext.Session.SetString(key: "roleName", value: RoleInfo.RoleName);
+                    }
+
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Online_Shop.Data;
 using Online_Shop.Models;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace Online_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductTypeController : Controller
     {
         private ApplicationDbContext _db;
@@ -16,11 +18,13 @@ namespace Online_Shop.Areas.Admin.Controllers
         {
             _db = db;
         }
+        //[AllowAnonymous]
+        
         public IActionResult Index()
         {
             return View(_db.productTypes.ToList());
         }
-        
+      
         public ActionResult Create()
         {
             return View();
@@ -41,7 +45,7 @@ namespace Online_Shop.Areas.Admin.Controllers
             }
             return View(product);
         }
-
+        
         public ActionResult Edit(int ? id)
         {
             var ProductType = _db.productTypes.Find(id);
@@ -69,6 +73,7 @@ namespace Online_Shop.Areas.Admin.Controllers
             }
             return View(product);
         }
+        
 
         public ActionResult Details(int? id)
         {
@@ -90,7 +95,7 @@ namespace Online_Shop.Areas.Admin.Controllers
         //    return  RedirectToAction(actionName: nameof(Index));
         //}
 
-
+        
         public ActionResult Delete(int? id)
         {
             var ProductType = _db.productTypes.Find(id);
@@ -102,7 +107,7 @@ namespace Online_Shop.Areas.Admin.Controllers
 
             return View(ProductType);
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int? id, ProductType product)

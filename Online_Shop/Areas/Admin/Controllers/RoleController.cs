@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Online_Shop.Areas.Admin.Models;
 using Online_Shop.Data;
 using System;
 using System.Collections.Generic;
@@ -10,14 +12,17 @@ using System.Threading.Tasks;
 namespace Online_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class RoleController : Controller
     {
         ApplicationDbContext _db;
           RoleManager<IdentityRole> _roleManager;
-        public RoleController(RoleManager<IdentityRole> roleManager, ApplicationDbContext db)
+        UserManager<IdentityUser> _userManager;
+        public RoleController(RoleManager<IdentityRole> roleManager, ApplicationDbContext db, UserManager<IdentityUser> userManager)
         {
             _roleManager = roleManager;
             _db = db;
+            _userManager = userManager;
 
         }
         public IActionResult Index()
@@ -127,9 +132,52 @@ namespace Online_Shop.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Assign()
         {
-            ViewData["UserId"] = new SelectList(_db.ApplicationUsers.ToList(),"Id","UserName");
-            ViewData["UserId"] = new SelectList(_roleManager.Roles.ToList(), "Id", "Name");
+
+            ViewData["UserId"] = new SelectList(_db.ApplicationUsers.Where(c=>c.LockoutEnd<DateTime.Now||c.LockoutEnd==null).ToList(),"Id", "UserName");
+            ViewData["RoleId"] = new SelectList(_roleManager.Roles.ToList(), "Name", "Name");
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Assign(RoleUserVm roleUserVm)
+        {
+            var user = _db.ApplicationUsers.FirstOrDefault(c => c.Id == roleUserVm.UserId);
+            var IsCheckRokeAssign = await _userManager.IsInRoleAsync(user, roleUserVm.RoleId);
+            if (IsCheckRokeAssign)
+            {
+                ViewBag.mgs = "This user alreay this role";
+                ViewData["UserId"] = new SelectList(_db.ApplicationUsers.Where(c => c.LockoutEnd < DateTime.Now || c.LockoutEnd == null).ToList(), "Id", "UserName");
+                ViewData["RoleId"] = new SelectList(_roleManager.Roles.ToList(), "Name", "Name");
+
+                return View();
+            }
+            var role = await _userManager.AddToRoleAsync(user,roleUserVm.RoleId);
+            if (role.Succeeded)
+            {
+                TempData["delete"] = "User Role Assign!";
+                return RedirectToAction(nameof(Index));
+            }
+
+            return  View();
+
+        }
+        public ActionResult AssignUserRole()
+        {
+            var result = from ur in _db.UserRoles
+                         join r in _db.Roles on ur.RoleId equals r.Id
+                         join a in _db.ApplicationUsers on ur.UserId equals a.Id
+                         select new UserRoleMaping()
+                         { 
+                             UserId=ur.UserId,
+                             RoleId=ur.RoleId,
+                             UserName=a.UserName,
+                             RoleName=r.Name
+
+
+
+                         };
+            ViewBag.UserRoles = result;
+            return View();
+
         }
 
     }
