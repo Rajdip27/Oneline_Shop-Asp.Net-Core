@@ -8,7 +8,7 @@
         <div asp-validation-summary="ModelOnly" class="text-danger">
 
         </div>
-        @*<h3>@ViewBag.message</h3>*@
+
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="UserName"></label>
@@ -55,23 +55,24 @@
 @section Scripts{
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    <script>$(document).ready(function () {
-        $("#user-form").validate({
-    rules: {
-      UserName : {
-        required: true,
-             },
-      PasswordHash : {
-        required: true,
-             }
-            },
-            messages: {
-                UserName: "Enter your email",
-PasswordHash:"Enter your password"
-            }
+    <script>
+    $(document).ready(function () {
+            $("#user-form").validate({
+                rules: {
+                    UserName: {
+                        required: true,
+                    },
+                    PasswordHash: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    UserName: "Enter your email",
+                    PasswordHash: "Enter your password"
+                }
 
-  });
-    });</script>
+            });
+        });</script>
 }
 
 
